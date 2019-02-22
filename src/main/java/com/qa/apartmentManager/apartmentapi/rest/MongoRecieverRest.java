@@ -21,6 +21,8 @@ public class MongoRecieverRest {
 	
 	@GetMapping("${path.getAllData}")
 	public List<SentApartmentManager> getAllData() {
-		return repo.findAll();
+		List<SentApartmentManager> f = repo.findAll();
+		System.out.println(f.get(0));
+		return f;
 	}
 }

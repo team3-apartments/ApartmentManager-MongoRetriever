@@ -8,6 +8,5 @@ import com.qa.apartmentManager.apartmentapi.persistence.domain.SentApartmentMana
 @Repository
 public interface MongoApartmentManagerRepo extends MongoRepository<SentApartmentManager, Long>{
 
-		
 
 }
