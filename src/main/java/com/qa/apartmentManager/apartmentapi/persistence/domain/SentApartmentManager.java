@@ -18,6 +18,7 @@ private Long apartmentId;
 	private String notes;
 	
 	public SentApartmentManager(Long apartmentId, int apartmentNumber, String apartmentBuilding, int roomNumber, String studentName, String intake, String startDate, String endDate, String cleanStatus, boolean occupied, boolean ensuite, String bedStatus, String notes) {
+		this.apartmentId = apartmentId;
 		this.apartmentNumber = apartmentNumber;
 		this.apartmentBuilding = apartmentBuilding;
 		this.roomNumber =roomNumber;
