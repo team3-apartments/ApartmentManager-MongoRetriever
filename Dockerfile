@@ -5,5 +5,5 @@ RUN mvn clean package
 FROM java:8
 WORKDIR /opt/website
 EXPOSE 8087
-COPY --from=maven-build /build/target/ApartmentManager-MongoRetriever-0.0.1-SNAPSHOT.jar mongoretiever.jar
+COPY --from=maven-build /build/target/ApartmentManager-MongoRetriever-0.0.1-SNAPSHOT.jar mongoretriever.jar
 ENTRYPOINT ["java", "-jar", "mongoretriever.jar"]
