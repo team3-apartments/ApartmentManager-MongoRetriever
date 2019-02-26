@@ -32,24 +32,20 @@ public class MongoRecieverRest {
 	}
 	
 	@PutMapping("${path.updateApartmentManager}")
-	public ResponseEntity<Object> updateApartmentManager(@RequestBody SentApartmentManager apartmentmanager,
+	public void updateApartmentManager(@RequestBody SentApartmentManager apartmentmanager,
 			@PathVariable Long id) {
 		if (apartmentManagerExists(id)) {
 			repo.deleteByApartmentId(id);
 			apartmentmanager.setApartmentId(id);
 			repo.save(apartmentmanager);
-			return ResponseEntity.ok().build();
 		}
-		return ResponseEntity.notFound().build();
 	}
 
 	@DeleteMapping("${path.deleteApartmentManager}")
-	public ResponseEntity<Object> deleteApartmentManager(@PathVariable Long id) {
+	public void deleteApartmentManager(@PathVariable Long id) {
 		if (apartmentManagerExists(id)) {
 			repo.deleteByApartmentId(id);
-			return ResponseEntity.ok().build();
 		}
-		return ResponseEntity.notFound().build();
 	}
 	
 	private boolean apartmentManagerExists(Long id) {
